@@ -1,0 +1,27 @@
+pkgbase = msi-claw-a1m-fixes
+	pkgdesc = Essential hardware fixes for MSI Claw A1M (Intel Xe driver, s2idle sleep, Wi-Fi 7 reload)
+	pkgver = 1.0.0
+	pkgrel = 1
+	url = https://github.com/ulbdir/msi-claw-a1m-fixes
+	install = msi-claw-fixes.install
+	arch = any
+	license = MIT
+	depends = systemd
+	depends = kmod
+	depends = iproute2
+	optdepends = mkinitcpio: to include the xe modprobe configuration into early initramfs
+	optdepends = limine-mkinitcpio-hook: for Limine bootloader updates on CachyOS
+	source = msi-claw-xe.conf
+	source = msi-claw-sleep.conf
+	source = msi-claw-s2idle.conf
+	source = msi-claw-wifi-reload.sh
+	source = 99-msi-claw-wifi.rules
+	source = LICENSE
+	sha256sums = 3b3e9238d8e64c732c0ff9fce791accf8693d4ed361a777bd514227abb075009
+	sha256sums = e28f4b554fb04608921fd380f1cc5bebd7c9e302ef515b6a3772f518afac9546
+	sha256sums = 7c95e240faec444d323e10e03df0a42f042d701060ab52079c96bfe9125bb8b4
+	sha256sums = 9fb5f6382dab84064a0db5aa262e2baadc6e1e420a2a53a862d447528db432b8
+	sha256sums = aafc9d847b2c7363ce600f90fe5e8fdd19f8d11c11d15ac8d80bb2b7f31375cf
+	sha256sums = 1126322e2cc8d165adc4c792eeb195717de2bcc7b39be1ce77959d78e87ef685
+
+pkgname = msi-claw-a1m-fixes

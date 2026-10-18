@@ -1,0 +1,3 @@
+# Disable D3cold for Intel Killer BE1750x / BE200 Wi-Fi 7 (8086:272b) on MSI Claw A1M
+# Prevents the Wi-Fi card from locking up in an unresponsive D3cold state during suspend/resume
+ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x8086", ATTR{device}=="0x272b", ATTR{d3cold_allowed}="0"

@@ -1,0 +1,6 @@
+# makepkg build directories
+pkg/
+src/
+
+# Built packages
+*.pkg.tar.*
