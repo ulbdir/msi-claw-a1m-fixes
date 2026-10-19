@@ -31,11 +31,18 @@ AUR package providing essential hardware, power management, and driver fixes for
 
 ## Installation
 
-To build and install this package locally:
+### Option A: Build and install via Git (Recommended)
 
 ```bash
-cd ~/msi-claw-a1m-fixes
+git clone https://github.com/ulbdir/msi-claw-a1m-fixes.git
+cd msi-claw-a1m-fixes
 makepkg -si
+```
+
+### Option B: Install directly from GitHub Release
+
+```bash
+sudo pacman -U https://github.com/ulbdir/msi-claw-a1m-fixes/releases/download/v1.0.0/msi-claw-a1m-fixes-1.0.0-1-any.pkg.tar.zst
 ```
 
 Then **reboot** your device:
