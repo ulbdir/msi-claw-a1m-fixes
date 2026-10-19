@@ -1,27 +1,6 @@
 post_install() {
-    echo ":: Applying MSI Claw A1M hardware fixes..."
-
-    # Reload udev rules for Wi-Fi D3cold
-    if command -v udevadm >/dev/null 2>&1; then
-        udevadm control --reload 2>/dev/null || true
-        udevadm trigger --subsystem-match=pci 2>/dev/null || true
-    fi
-
-    # Apply s2idle sleep mode immediately
-    if command -v systemd-tmpfiles >/dev/null 2>&1; then
-        systemd-tmpfiles --create /usr/lib/tmpfiles.d/msi-claw-sleep.conf 2>/dev/null || true
-    fi
-
-    # Regenerate initramfs so xe modprobe rule is baked into early boot
-    if command -v limine-mkinitcpio >/dev/null 2>&1; then
-        echo ":: Updating initramfs and Limine boot entries..."
-        /usr/bin/limine-mkinitcpio
-    elif command -v mkinitcpio >/dev/null 2>&1; then
-        echo ":: Regenerating initramfs..."
-        /usr/bin/mkinitcpio -P
-    fi
-
-    echo ":: Setup completed. Please reboot to activate the Intel Xe GPU driver."
+    echo ":: MSI Claw A1M fixes applied."
+    echo ":: Please reboot your device to activate the Intel Xe driver and sleep settings."
 }
 
 post_upgrade() {
@@ -29,15 +8,6 @@ post_upgrade() {
 }
 
 post_remove() {
-    echo ":: Removing MSI Claw A1M hardware fixes..."
-
-    if command -v udevadm >/dev/null 2>&1; then
-        udevadm control --reload 2>/dev/null || true
-    fi
-
-    if command -v limine-mkinitcpio >/dev/null 2>&1; then
-        /usr/bin/limine-mkinitcpio
-    elif command -v mkinitcpio >/dev/null 2>&1; then
-        /usr/bin/mkinitcpio -P
-    fi
+    echo ":: MSI Claw A1M fixes removed."
+    echo ":: Please reboot your device to revert to default kernel and power settings."
 }

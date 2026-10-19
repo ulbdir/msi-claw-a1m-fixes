@@ -2,7 +2,7 @@
 pkgname=msi-claw-a1m-fixes
 pkgver=1.0.0
 pkgrel=1
-pkgdesc="Essential hardware fixes for MSI Claw A1M (Intel Xe driver, s2idle sleep, Wi-Fi 7 reload)"
+pkgdesc="Hardware, Xe GPU driver, and sleep fixes for MSI Claw A1M"
 arch=('any')
 url="https://github.com/ulbdir/msi-claw-a1m-fixes"
 license=('MIT')
